@@ -1,5 +1,8 @@
-const express = require('express');
 import { producto, pedido, proveedor, factura } from "../models/models";
+import express, { Request, Response } from "express";
+
+
+const app = express();
 
 let productos: producto[] = [
     {
@@ -9,7 +12,7 @@ let productos: producto[] = [
         stock: 10,
         precio: 10
     },
-]
+];
 
 let pedidos: pedido[] = [
     {
@@ -21,7 +24,7 @@ let pedidos: pedido[] = [
         entrega: '01-04-2024',
         status: 'En transito'   
     },
-]
+];
 
 let proveedores: proveedor[] = [
     {
@@ -30,7 +33,7 @@ let proveedores: proveedor[] = [
         no_tel: 4561990330,
         email: 'granjasvacon@gmail.com'
     },
-]
+];
 
 let facturas: factura[] = [
     {
@@ -45,4 +48,57 @@ let facturas: factura[] = [
         iva: 15,
         total: 115
     }
-]
+];
+
+// PRODUCTOS
+const getProductsAll = (req:Request, res:Response) => {
+    res.json(productos);
+}
+
+const getProductsId = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const product = productos.find(prod => prod.id === id);
+    
+    if(!product){
+        res.status(404).send("No items found");
+    }
+
+    res.json(product);
+}
+
+const newProduct = (req:Request, res: Response) => {
+    const id = parseInt(req.body.id);
+    const product = productos.find(prod => prod.id === id);
+
+    if(!product){
+        productos = [...productos, req.body];
+    }
+
+    res.status(404).send("There's an item with the same ID");
+}
+
+const updateProduct = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const product = productos.find(prod => prod.id === id);
+
+    if(!product) {
+        res.status(404).send("No items found");
+    }
+
+    const updatedProd = {...product, ...req.body};
+    productos = productos.map(prod => prod.id === updatedProd.id ? updatedProd : prod);
+    
+    res.send("Success");
+}
+
+const deleteProduct = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const product = productos.find(prod => prod.id === id);
+
+    if(!product) {
+        res.status(404).send("No items found");
+    }
+
+    productos = productos.filter(prod => prod.id !== id);
+    res.send("Success");
+}
