@@ -47,7 +47,7 @@ let facturas: factura[] = [
         sub_total: 100,
         iva: 15,
         total: 115
-    }
+    },
 ];
 
 // PRODUCTOS
@@ -55,7 +55,7 @@ const getProductsAll = (req:Request, res:Response) => {
     res.json(productos);
 }
 
-const getProductsId = (req:Request, res:Response) => {
+const getProductId = (req:Request, res:Response) => {
     const id = parseInt(req.body.id);
     const product = productos.find(prod => prod.id === id);
     
@@ -100,5 +100,164 @@ const deleteProduct = (req:Request, res:Response) => {
     }
 
     productos = productos.filter(prod => prod.id !== id);
+    res.send("Success");
+}
+
+// PEDIDOS
+const getOrdersAll = (req:Request, res:Response) => {
+    res.json(pedidos);
+}
+
+const getOrderId = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const order = pedidos.find(ord => ord.id === id);
+    
+    if(!order){
+        res.status(404).send("No items found");
+    }
+
+    res.json(order);
+}
+
+const newOrder = (req:Request, res: Response) => {
+    const id = parseInt(req.body.id);
+    const order = pedidos.find(ord => ord.id === id);
+
+    if(!order){
+        pedidos = [...pedidos, req.body];
+    }
+
+    res.status(404).send("There's an item with the same ID");
+}
+
+const updateOrder = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const order = pedidos.find(ord => ord.id === id);
+
+    if(!order) {
+        res.status(404).send("No items found");
+    }
+
+    const updatedOrd = {...order, ...req.body};
+    pedidos = pedidos.map(ord => ord.id === updatedOrd.id ? updatedOrd : ord);
+    
+    res.send("Success");
+}
+
+const deleteOrder = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const order = pedidos.find(prod => prod.id === id);
+
+    if(!order) {
+        res.status(404).send("No items found");
+    }
+
+    pedidos = pedidos.filter(ord => ord.id !== id);
+    res.send("Success");
+}
+
+// PROVEEDORES
+const getProvidersAll = (req:Request, res:Response) => {
+    res.json(proveedores);
+}
+
+const getProviderId = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const provider = proveedores.find(prov => prov.id === id);
+    
+    if(!provider){
+        res.status(404).send("No items found");
+    }
+
+    res.json(provider);
+}
+
+const newProvider = (req:Request, res: Response) => {
+    const id = parseInt(req.body.id);
+    const provider = proveedores.find(prov => prov.id === id);
+
+    if(!provider){
+        proveedores = [...proveedores, req.body];
+    }
+
+    res.status(404).send("There's an item with the same ID");
+}
+
+const updateProvider = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const provider = proveedores.find(prov => prov.id === id);
+
+    if(!provider) {
+        res.status(404).send("No items found");
+    }
+
+    const updatedProv = {...provider, ...req.body};
+    proveedores = proveedores.map(prov => prov.id === updatedProv.id ? updatedProv : prov);
+    
+    res.send("Success");
+}
+
+const deleteProvider = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const provider = proveedores.find(prov => prov.id === id);
+
+    if(!provider) {
+        res.status(404).send("No items found");
+    }
+
+    proveedores = proveedores.filter(prov => prov.id !== id);
+    res.send("Success");
+}
+
+// FACTURAS
+const getBillsAll = (req:Request, res:Response) => {
+    res.json(facturas);
+}
+
+const getBillId = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const bill = facturas.find(bll => bll.id === id);
+    
+    if(!bill){
+        res.status(404).send("No items found");
+    }
+
+    res.json(bill);
+}
+
+const newBill = (req:Request, res: Response) => {
+    const id = parseInt(req.body.id);
+    const bill = facturas.find(bll => bll.id === id);
+
+    if(!bill){
+        facturas = [...facturas, req.body];
+    }
+
+    res.status(404).send("There's an item with the same ID");
+}
+
+const updateBill = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const bill = facturas.find(bll => bll.id === id);
+
+    if(!bill) {
+        res.status(404).send("No items found");
+    }
+
+    const updatedBill = {...bill, ...req.body};
+    facturas = facturas.map(bll => bll.id === updatedBill.id ? updatedBill : bll);
+    
+    res.send("Success");
+}
+
+const deleteBill = (req:Request, res:Response) => {
+    const id = parseInt(req.body.id);
+    const bill = facturas.find(bll => bll.id === id);
+
+    if(!bill) {
+        res.status(404).send("No items found");
+    }
+
+    facturas = facturas.filter(bll => bll.id !== id);
     res.send("Success");
 }
