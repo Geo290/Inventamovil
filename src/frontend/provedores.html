@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>ProovedoresV</title>
+	<!-- Normalize V8.0.1 -->
+	<link rel="stylesheet" href="./css/normalize.css">
+	<!-- Bootstrap V4.3 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<!-- Bootstrap Material Design V4.0 -->
+	<link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
+	<!-- Font Awesome V5.9.0 -->
+	<link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<!-- Sweet Alerts V8.13.0 CSS file -->
+	<link rel="stylesheet" href="./css/sweetalert2.min.css">
+	<!-- Sweet Alert V8.13.0 JS file-->
+	<script src="./js/sweetalert2.min.js" ></script>
+	<!-- jQuery Custom Content Scroller V3.1.5 -->
+	<link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
+	<!-- General Styles -->
+	<link rel="stylesheet" href="./css/inventario.css">
+	<link rel="stylesheet" href="./css/nav.css">
+</head>
+<body>
+	<main class="full-box main-container">
+		<!-- Nav lateral -->
+		<section class="full-box nav-lateral">
+			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
+			<div class="full-box nav-lateral-content">
+				<figure class="full-box nav-lateral-avatar">
+					<i class="far fa-times-circle show-nav-lateral"></i>
+					<img src="./imagenes/logo.png" class="img-fluid" alt="InventaMovil">
+					<figcaption class="roboto-medium text-center">
+                        BIENVENIDO!<br><small class="roboto-condensed-light"></small>
+                    </figcaption>
+				</figure>
+				<div class="full-box nav-lateral-bar"></div>
+				<nav class="full-box nav-lateral-menu">
+					<ul>
+						<li>
+							<a href="operaciones.html"><i class="fas fa-store-alt"></i> &nbsp; InventaMovil</a>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-clipboard-list"></i>&nbsp; Inventario <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="inventario.html"><i class="fas fa-search"></i> &nbsp; Buscar producto</a>
+								</li>
+								
+							</ul>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-box"></i>&nbsp;Productos <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="productos.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar producto</a>
+								</li>
+								<li>
+									<a href="inventario.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de productos</a>
+								</li>
+							</ul>
+						</li>
+                        <li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-clipboard-list"></i>&nbsp;Pedidos <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="regpedido.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar pedidos</a>
+								</li>
+								<li>
+									<a href="pedidos.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de pedidos</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+						<a href="#" class="nav-btn-submenu"><i class="fas fa-file-invoice-dollar fa-fw"></i>&nbsp;Facturas<i class="fas fa-chevron-down"></i></a>
+						<ul>
+								<li>
+									<a href="facturas.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar facturas</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-users fa-fw"></i> &nbsp; Proveedores<i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="regproveedor.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo proveedor</a>
+								</li>
+								<li>
+									<a href="provedores.html"><i class="fas fa-address-book"></i> &nbsp; Lista de proveedores</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Nav superior -->
+		<section class="full-box page-content">
+			<nav class="full-box navbar-info">
+				<a href="#" class="float-left show-nav-lateral">
+					<i class="fas fa-exchange-alt"></i>
+				</a>
+				<a href="login.html" class="btn-exit-system">
+					<i class="fas fa-power-off"></i>
+				</a>
+			</nav><br>
+
+			<!-- Titulo -->
+			<div class="full-box page-header">
+				<h3 class="text-left">
+				<i class="fas fa-users fa-fw"></i>&nbsp;Proveedores
+				</h3>
+			</div>
+
+          <!-- Busqueda-->  
+            <div class="container mt-4">
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group mb-2">
+                      <label for="col-form-label" for="iptcodigoVenta">
+                        <i class="fas fa-barcode fs-6"></i>
+                        <span class="small">Proovedor</span>
+                      </label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Ingrese el nombre del proovedor">
+                    </div>
+                  </div>
+                </div>
+
+             <!-- Tabla-->   
+            <div class="container mt-4">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>ID Proveedor</th>
+                        <th>Nombre</th>
+                        <th>Numero telefonico</th>
+                        <th>Correo electronico</th>
+                        <th>Actualizar</th>
+                        <th>Eliminar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="#" class="btn btn-success"><i class="fas fa-edit"></i></a></td>
+			            <td><a href="#" class="btn btn-warning"><i class="far fa-trash-alt" ></i></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+	<!--=============================================
+    Include JavaScript       
+	==============================================-->
+	<!-- jQuery V3.4.1 -->
+	<script src="./js/jquery-3.4.1.min.js" ></script>
+	<!-- popper -->
+	<script src="./js/popper.min.js" ></script>
+	<!-- Bootstrap V4.3 -->
+	<script src="./js/bootstrap.min.js" ></script>
+	<!-- jQuery Custom Content Scroller V3.1.5 -->
+	<script src="./js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<!-- Bootstrap Material Design V4.0 -->
+	<script src="./js/bootstrap-material-design.min.js" ></script>
+	<script src="./js/main.js" ></script>
+</body>
+</html>
