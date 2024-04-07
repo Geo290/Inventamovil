@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'roboto_medium_regular';
+    src: url('../webfonts/roboto-medium-webfont.woff2') format('woff2'),
+    url('../webfonts/roboto-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto_condensed_light';
+    src: url('../webfonts/robotocondensed-light-webfont.woff2') format('woff2'),
+         url('../webfonts/robotocondensed-light-webfont.woff') format('woff'),
+         url('../webfonts/robotocondensed-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_condensed_regular';
+    src: url('../webfonts/robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('../webfonts/robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body,html{
+    font-family: 'roboto_condensed_light';
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-one);
+    color: #333;
+    font-size: 16px;
+}
+
+/*----------  Home Styles  ----------*/
+.blue-rectangle {
+   
+    background-color: #42A4DB;
+    border: 4px solid #42A4DB; 
+    margin-bottom: 4rem; 
+    color: #FFF;
+}
+.h3{
+    font-weight: bold;
+    font-size: 12px;
+}
+.tile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D8D8D8;
+    height: 55vh; 
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto; /* Centra horizontalmente */
+    border: 1px solid #ccc;
+    padding: 2rem;
+
+}
+
+.tile {
+    margin: 5px;
+    text-decoration: none;
+    color: var(--accent-color);
+    border: 4px solid #42A4DB;
+    border-radius: 3px;
+    user-select: none;
+    transition: all .2s ease-in-out;
+    background-color: #FFF;
+}
+
+.tile:hover{
+	text-decoration: none;
+	border-color: var(--color-three);
+}
+.tile:focus,
+.tile:active{
+	outline: none;
+}
+.tile-tittle{
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	height: 40px;
+	line-height: 40px;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	border-bottom: 2px solid #42A4DB;
+	transition: all .2s ease-in-out;
+	font-family: 'roboto_medium_regular';
+}
+.tile:hover .tile-tittle{
+	color: #FFF;
+	border-color: var(--color-three);
+	background-color: var(--color-three);
+}
+.tile-icon{
+	width: 100%;
+	height: 160px;
+	box-sizing: border-box;
+	padding-top: 22px;
+}
+.tile-icon > img{
+	width: 80px; /* ajusta el tamaño de la imagen según sea necesario */
+	height: auto;
+}
+.tile:hover .tile-icon > img{
+	filter: grayscale(100%);
+}
+
+.registration-btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: blue;
+    padding: 8px 20px;
+    border-radius: 5px;
+    z-index: 1; /* Asegura que esté encima del contenido del div de login */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
+}
+
+.login {
+    position: relative; /* Establece un contexto de posición para el elemento relativo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 38vh; 
+    padding: 0%;
+    width: 100%;
+}
+
+.login img {
+    width: 125px; 
+    border: 4px solid #42A4DB;
+    border-radius: 50%;
+}
+
+.input {
+    width: calc(100% - 10rem); /* Tomando en cuenta el padding */
+    margin: 0;
+    margin-bottom: 9px;
+    
+}
+
+.input input {
+    outline: none;
+    background: #fff;
+    width: 13rem;
+    border: 0;
+    margin: 0;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.btn-link {
+    color: #111111;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #42A4DB;
+    font-weight: bold;
+    color:#fff;
+    padding: 8px 25px;
+    cursor: pointer; 
+    border-radius: 5%;
+}
+
+/*  Bootstrap breakpoints */
+@media (min-width: 576px){
+
+}
+
+@media (min-width: 768px){
+	.nav-lateral.active{
+		transform: translateX(-400px);
+	}
+	.page-content.active{
+		padding-left: 0;
+	}
+}
+
+@media (min-width: 992px){
+
+}
+
+@media (min-width: 1200px){
+
+}
