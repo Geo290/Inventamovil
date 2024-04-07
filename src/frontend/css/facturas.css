@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'roboto_medium_regular';
+    src: url('../webfonts/roboto-medium-webfont.woff2') format('woff2'),
+    url('../webfonts/roboto-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto_condensed_light';
+    src: url('../webfonts/robotocondensed-light-webfont.woff2') format('woff2'),
+         url('../webfonts/robotocondensed-light-webfont.woff') format('woff'),
+         url('../webfonts/robotocondensed-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_condensed_regular';
+    src: url('../webfonts/robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('../webfonts/robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body,html{
+    font-family: 'roboto_condensed_light';
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-one);
+    color: #333;
+    font-size: 16px;
+}
+
+/*----------  Home Styles  ----------*/
+
+.tile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    height:40rem; 
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto; 
+    padding: 2rem;
+}
+.datos{
+    margin-top: 0;
+}
+th {
+    background-color: #42A4DB;
+    color: #fff;
+    text-align: center;
+  }
+  
+.img{
+    width: 4rem;
+    height: 4rem;
+    
+}
+/*  Bootstrap breakpoints */
+@media (min-width: 576px){
+
+}
+
+@media (min-width: 768px){
+	.nav-lateral.active{
+		transform: translateX(-400px);
+	}
+	.page-content.active{
+		padding-left: 0;
+	}
+}
+
+@media (min-width: 992px){
+
+}
